@@ -2,19 +2,16 @@ import { HttpRequest, HttpResponse } from '../interfaces/http-interface'
 
 export class RegisterVehicle {
   handle (httpRequest: HttpRequest): HttpResponse {
-    if (!httpRequest.body.name) { // eslint-disable-line
-      return {
-        statusCode: 400,
-        body: new Error('error in the: name')
+    const requiredProperties = ['name', 'model', 'year', 'color']
+    for (const props of requiredProperties) {
+      if (!httpRequest.body[props]) { // eslint-disable-line
+        return {
+          statusCode: 400,
+          body: new Error(`error in the: ${props}`)
+        }
       }
     }
 
-    if (!httpRequest.body.model) { // eslint-disable-line
-      return {
-        statusCode: 400,
-        body: new Error('error in the: model')
-      }
-    }
     return { statusCode: 200 }
   }
 }
