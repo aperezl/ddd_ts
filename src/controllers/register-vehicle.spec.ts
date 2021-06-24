@@ -1,4 +1,4 @@
-import { RegisterVehicle } from '../controllers/register-vehicle'
+import { RegisterVehicle } from './register-vehicle'
 
 describe('RegisterVehicle', () => {
   test('if the name does not exists return 400', () => {
