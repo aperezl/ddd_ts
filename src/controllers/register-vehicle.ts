@@ -5,7 +5,7 @@ export class RegisterVehicle {
   handle (httpRequest: HttpRequest): HttpResponse {
     const requiredProperties = ['name', 'model', 'year', 'color']
     for (const props of requiredProperties) {
-      if (!httpRequest.body[props]) { // eslint-disable-line
+      if (!httpRequest.body[props]) {
         return {
           statusCode: 400,
           body: new MissingFormalParameters(props)
