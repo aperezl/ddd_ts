@@ -1,5 +1,7 @@
+import { HttpRequest, HttpResponse } from '../interfaces/http-interface'
+
 export class RegisterVehicle {
-  handle (httpRequest: any): any {
+  handle (httpRequest: HttpRequest): HttpResponse {
     if (!httpRequest.body.name) { // eslint-disable-line
       return {
         statusCode: 400,
@@ -13,5 +15,6 @@ export class RegisterVehicle {
         body: new Error('error in the: model')
       }
     }
+    return { statusCode: 200 }
   }
 }
