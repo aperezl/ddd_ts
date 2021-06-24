@@ -7,4 +7,6 @@ export class Food {
   getDescription (): string { return this.food.description }
 
   getPrice (): number { return this.food.price }
+
+  getInventory (): number { return this.food.inventory }
 }
