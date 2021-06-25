@@ -12,5 +12,8 @@ export default {
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$'
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$',
+  modulePathIgnorePatterns: [
+    '<rootDir>/src/interfaces'
+  ]
 }
