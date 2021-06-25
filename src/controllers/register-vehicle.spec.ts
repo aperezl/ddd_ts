@@ -61,4 +61,18 @@ describe('RegisterVehicle', () => {
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new MissingFormalParameters('color'))
   })
+
+  test('if the httpRequest is correct should return a 200', () => {
+    const sut = new RegisterVehicle()
+    const httpRequest = {
+      body: {
+        name: 'Nissan',
+        model: 'DXT',
+        year: 2020,
+        color: 'red'
+      }
+    }
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.statusCode).toBe(200)
+  })
 })
