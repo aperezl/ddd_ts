@@ -1,0 +1,5 @@
+POST http://localhost:8080/api/register-vehicle
+
+###
+
+GET http://localhost:8080/api
