@@ -1,9 +1,9 @@
 import express from 'express'
 import { config as dotenv } from 'dotenv'
 import routes from './routes'
-
-const app = express()
-// ROUTES INIT
-routes(app)
+import middlewares from './middlewares'
 dotenv()
+const app = express()
+middlewares(app)
+routes(app)
 export default app
