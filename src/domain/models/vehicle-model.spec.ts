@@ -1,4 +1,4 @@
-import { VehicleHelper } from '../helpers/vehicle-model-helper'
+import { VehicleHelper } from '../../helpers/vehicle-model-helper'
 import { VehicleModel } from './vehicle-model'
 
 describe('Classes', () => {

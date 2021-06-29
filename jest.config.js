@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-export default {
+module.exports = {
   roots: ['<rootDir>/src'],
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   coverageDirectory: 'coverage',
@@ -12,7 +12,7 @@ export default {
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$',
+  // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$',
   modulePathIgnorePatterns: [
     '<rootDir>/src/interfaces'
   ]

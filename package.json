@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "lint-staged",
-    "test": "jest --watch -o",
-    "start": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/main/server/server.ts"
+    "start": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/main/server/server.ts",
+    "test": "jest --passWithNoTests --silent --noStackTrace",
+    "test:all": "jest",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js ",
+    "test:ci": "npm test -- --watch -c jest-integration-config.js",
+    "test:coverage": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",

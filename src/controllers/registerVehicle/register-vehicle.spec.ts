@@ -1,4 +1,5 @@
-import { MissingFormalParameters } from '../errors/client-error'
+
+import { MissingFormalParameters } from '../../errors/client-error'
 import { RegisterVehicle } from './register-vehicle'
 
 describe('RegisterVehicle', () => {

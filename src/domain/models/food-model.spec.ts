@@ -1,4 +1,4 @@
-import { FoodHelper } from '../helpers/food-model-helper'
+import { FoodHelper } from '../../helpers/food-model-helper'
 import { Food } from './food-model'
 
 describe('Classes', () => {
