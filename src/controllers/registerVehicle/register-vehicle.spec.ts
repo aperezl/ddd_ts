@@ -3,7 +3,7 @@ import { MissingFormalParameters } from '../../errors/client-error'
 import { RegisterVehicle } from './register-vehicle'
 
 describe('RegisterVehicle', () => {
-  test('if the name does not exists return 400', () => {
+  test('if the name does not exists return 400', async () => {
     const sut = new RegisterVehicle()
     const httpRequest = {
       body: {
@@ -13,12 +13,12 @@ describe('RegisterVehicle', () => {
         color: 'red'
       }
     }
-    const httpResponse = sut.handle(httpRequest)
+    const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new MissingFormalParameters('name'))
   })
 
-  test('if the model does not exists return 400', () => {
+  test('if the model does not exists return 400', async () => {
     const sut = new RegisterVehicle()
     const httpRequest = {
       body: {
@@ -28,12 +28,12 @@ describe('RegisterVehicle', () => {
         color: 'red'
       }
     }
-    const httpResponse = sut.handle(httpRequest)
+    const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new MissingFormalParameters('model'))
   })
 
-  test('if the year does not exists return 400', () => {
+  test('if the year does not exists return 400', async () => {
     const sut = new RegisterVehicle()
     const httpRequest = {
       body: {
@@ -43,12 +43,12 @@ describe('RegisterVehicle', () => {
         color: 'red'
       }
     }
-    const httpResponse = sut.handle(httpRequest)
+    const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new MissingFormalParameters('year'))
   })
 
-  test('if the color does not exists return 400', () => {
+  test('if the color does not exists return 400', async () => {
     const sut = new RegisterVehicle()
     const httpRequest = {
       body: {
@@ -58,12 +58,12 @@ describe('RegisterVehicle', () => {
         // color: 'red'
       }
     }
-    const httpResponse = sut.handle(httpRequest)
+    const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new MissingFormalParameters('color'))
   })
 
-  test('if the httpRequest is correct should return a 200', () => {
+  test('if the httpRequest is correct should return a 200', async () => {
     const sut = new RegisterVehicle()
     const httpRequest = {
       body: {
@@ -73,7 +73,7 @@ describe('RegisterVehicle', () => {
         color: 'red'
       }
     }
-    const httpResponse = sut.handle(httpRequest)
+    const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(200)
   })
 })

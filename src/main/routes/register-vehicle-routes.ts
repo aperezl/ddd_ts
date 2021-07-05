@@ -5,8 +5,4 @@ export default (router: Router): void => {
     console.log(req.body)
     res.sendStatus(200)
   })
-
-  router.get('/', (req: Request, res: Response) => {
-    res.json({ success: true })
-  })
 }
